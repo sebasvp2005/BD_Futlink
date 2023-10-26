@@ -24,7 +24,7 @@ insert into usuarios (codigo, nombre, apellido, correo, contrasenia, edad) value
 insert into usuarios (codigo, nombre, apellido, correo, contrasenia, edad) values (9572, 'Vassili', 'Alman', 'valman2@hostgator.com', 'fI0+bE#IU', 15);
 insert into usuarios (codigo, nombre, apellido, correo, contrasenia, edad) values (9428, 'Padget', 'Trelease', 'ptrelease3@twitpic.com', 'mG3,dVHY', 50);
 insert into usuarios (codigo, nombre, apellido, correo, contrasenia, edad) values (2591, 'Ferdinand', 'Cusick', 'fcusick4@zdnet.com', 'xG6<n2P}/', 48);
-insert into usuarios (codigo, nombre, apellido, correo, contrasenia, edad) values (2151, 'Ealasaid', 'Lohde', 'elohde5@zdnet.com', 'fD6_Ro".e2\', 44);
+insert into usuarios (codigo, nombre, apellido, correo, contrasenia, edad) values (2151, 'Ealasaid', 'Lohde', 'elohde5@zdnet.com', 'fD6_Ro".e2', 44);
 insert into usuarios (codigo, nombre, apellido, correo, contrasenia, edad) values (6431, 'Miquela', 'Hixson', 'mhixson6@ifeng.com', 'dX4,)eEQbzwE(', 26);
 insert into usuarios (codigo, nombre, apellido, correo, contrasenia, edad) values (2290, 'Pieter', 'O''Hannigan', 'pohannigan7@prnewswire.com', 'lW0.d!iRx6E', 11);
 insert into usuarios (codigo, nombre, apellido, correo, contrasenia, edad) values (8772, 'Ogdon', 'Darcy', 'odarcy8@xinhuanet.com', 'lF1!.E6z>I''kbs<', 45);
