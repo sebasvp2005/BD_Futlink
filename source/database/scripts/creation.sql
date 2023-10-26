@@ -162,13 +162,13 @@ GO
 ALTER TABLE jugadores_equipos_historial
   ADD CONSTRAINT FK_equipos_TO_jugadores_equipos_historial
     FOREIGN KEY (codigo_jugador)
-    REFERENCES equipos (codigo)
+    REFERENCES jugadores (codigo)
 GO
 
 ALTER TABLE jugadores_equipos_historial
   ADD CONSTRAINT FK_jugadores_TO_jugadores_equipos_historial
     FOREIGN KEY (codigo_equipo)
-    REFERENCES jugadores (codigo)
+    REFERENCES equipos(codigo)
 GO
 
 ALTER TABLE estadisticas
