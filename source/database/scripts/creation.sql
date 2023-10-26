@@ -50,6 +50,8 @@ CREATE TABLE estadisticas
 )
 GO
 
+  
+
 CREATE TABLE fases
 (
   codigo             int         NOT NULL,
@@ -131,4 +133,94 @@ CREATE TABLE usuarios_jugadores_favoritos
   codigo_jugador int NOT NULL,
   CONSTRAINT PK_usuarios_jugadores_favoritos PRIMARY KEY (codigo_usuario, codigo_jugador)
 )
+GO
+
+ALTER TABLE equipos_competiciones
+  ADD CONSTRAINT FK_equipos_TO_equipos_competiciones
+    FOREIGN KEY (codigo_equipo)
+    REFERENCES equipos (codigo)
+GO
+
+ALTER TABLE equipos_competiciones
+  ADD CONSTRAINT FK_competiciones_TO_equipos_competiciones
+    FOREIGN KEY (codigo_competicion)
+    REFERENCES competiciones (codigo)
+GO
+
+ALTER TABLE fases
+  ADD CONSTRAINT FK_competiciones_TO_fases
+    FOREIGN KEY (codigo_competicion)
+    REFERENCES competiciones (codigo)
+GO
+
+ALTER TABLE partidos
+  ADD CONSTRAINT FK_fases_TO_partidos
+    FOREIGN KEY (codigo_fase)
+    REFERENCES fases (codigo)
+GO
+
+ALTER TABLE jugadores_equipos_historial
+  ADD CONSTRAINT FK_equipos_TO_jugadores_equipos_historial
+    FOREIGN KEY (codigo_jugador)
+    REFERENCES equipos (codigo)
+GO
+
+ALTER TABLE jugadores_equipos_historial
+  ADD CONSTRAINT FK_jugadores_TO_jugadores_equipos_historial
+    FOREIGN KEY (codigo_equipo)
+    REFERENCES jugadores (codigo)
+GO
+
+ALTER TABLE estadisticas
+  ADD CONSTRAINT FK_jugadores_TO_estadisticas
+    FOREIGN KEY (codigo_jugador)
+    REFERENCES jugadores (codigo)
+GO
+
+ALTER TABLE usuarios_equipos_favoritos
+  ADD CONSTRAINT FK_equipos_TO_usuarios_equipos_favoritos
+    FOREIGN KEY (codigo_usuario)
+    REFERENCES usuarios (codigo)
+GO
+
+ALTER TABLE usuarios_equipos_favoritos
+  ADD CONSTRAINT FK_usuarios_TO_usuarios_equipos_favoritos
+    FOREIGN KEY (codigo_equipo)
+    REFERENCES equipos (codigo)
+GO
+
+ALTER TABLE usuarios_jugadores_favoritos
+  ADD CONSTRAINT FK_usuarios_TO_usuarios_jugadores_favoritos
+    FOREIGN KEY (codigo_usuario)
+    REFERENCES usuarios (codigo)
+GO
+
+ALTER TABLE usuarios_jugadores_favoritos
+  ADD CONSTRAINT FK_jugadores_TO_usuarios_jugadores_favoritos
+    FOREIGN KEY (codigo_jugador)
+    REFERENCES jugadores (codigo)
+GO
+
+ALTER TABLE comentarios
+  ADD CONSTRAINT FK_usuarios_TO_comentarios
+    FOREIGN KEY (codigo_usuario)
+    REFERENCES usuarios (codigo)
+GO
+
+ALTER TABLE comentarios
+  ADD CONSTRAINT FK_noticias_TO_comentarios
+    FOREIGN KEY (codigo_noticia)
+    REFERENCES noticias (codigo)
+GO
+
+ALTER TABLE partidos
+  ADD CONSTRAINT FK_equipos_TO_partidos
+    FOREIGN KEY (codigo_visitante)
+    REFERENCES equipos (codigo)
+GO
+
+ALTER TABLE partidos
+  ADD CONSTRAINT FK_equipos_TO_partidos1
+    FOREIGN KEY (codigo_local)
+    REFERENCES equipos (codigo)
 GO
